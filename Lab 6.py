@@ -28,4 +28,3 @@ if __name__ == '__main__':
             pass
         if menu_input == 3:
             exit()
-
