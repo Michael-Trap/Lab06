@@ -16,15 +16,28 @@ def encode(oldpass):
             newpass += str(int(oldpass[x]) + 3 - 10)    #offset by + 3 and remove tens digit. Modulo also works
     return newpass
 
+def decoder(string):
+    res = []
+    for i in string:
+        if int(i) > 2:
+            res.append(str(int(i) - 3))
+        else:
+            res.append(str(int(i) + 10 - 3))
+
+    res = ''.join(res)
+    return res
+
+
 if __name__ == '__main__':
     while True:
         menu()
         menu_input = int(input("\nPlease enter an option: "))
         if menu_input == 1:
             password = input("Please enter your password to encode: ")
-            encode(password)
+            encoded_password = encode(password)
             print("Your password has been encoded and stored!\n")
         if menu_input == 2:
-            pass
+            password = decoder(encoded_password)
+            print(f'The encoded password is {encoded_password}, and the original password is {password}.')
         if menu_input == 3:
             exit()
