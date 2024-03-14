@@ -13,7 +13,7 @@ def encode(oldpass):
         if int(oldpass[x]) < 7:
             newpass += str(int(oldpass[x]) + 3)    #offset by + 3
         else:
-            newpass += str(int(oldpass[x]) + 3 - 10)    #offset by + 3 and remove tens digit
+            newpass += str(int(oldpass[x]) + 3 - 10)    #offset by + 3 and remove tens digit. Modulo also works
     return newpass
 
 if __name__ == '__main__':
