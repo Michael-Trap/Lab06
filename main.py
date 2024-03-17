@@ -27,8 +27,7 @@ def decoder(string):
     res = ''.join(res)
     return res
 
-
-if __name__ == '__main__':
+def main():
     while True:
         menu()
         menu_input = int(input("\nPlease enter an option: "))
@@ -38,6 +37,9 @@ if __name__ == '__main__':
             print("Your password has been encoded and stored!\n")
         if menu_input == 2:
             password = decoder(encoded_password)
-            print(f'The encoded password is {encoded_password}, and the original password is {password}.')
+            print(f'The encoded password is {encoded_password}, and the original password is {password}.\n')
         if menu_input == 3:
             exit()
+
+if __name__ == '__main__':
+    main()
